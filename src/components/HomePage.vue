@@ -2,7 +2,7 @@
   <body class="home">
     <div class="row">
       <div class="col">
-        // Fake sidebar
+        <!--Fake sidebar--> 
         <ul class="sidebar">
           <li class="sidebarComponent"><i class="bi bi-house-fill"></i>Home</li>
           <li class="sidebarComponent"><i class="bi bi-search"></i>Explore</li>
@@ -21,35 +21,35 @@
         </ul>
       </div>
       <div class="col">
-                //Post
+        <!--Post-->
         <textarea name="tweetMessage" id="tweet" cols="50" rows="5" class="tweet" v-model="message"></textarea>
         <button class="btn btn-primary createPost" @click="createPost">
 
         </button>
-        // List of posts
+        <!--List-->
         <ul class="list-group posts">
           <li v-for="(post, idx) in posts" :key="post.id" class="list-group-item posts">
-            // User
+            <!--User--> 
             <img :src="require(`@/img/${post.user.imageUrl}`)"
               alt="profilePic"
               class="profilePic"/>
             <h3 class="postUsername">{{ post.user.twitterHandle }}</h3>
-            // Post
+            <!--Post-->
             <div v-if="!post.edit">
               <p class="postMessage">{{ post.message }}</p>
             </div>
-            // Edit
+            <!--Edit-->
             <div v-if="post.edit">
               <textarea name="editPost" id="editTweet" cols="30" rows="10" class="tweet" v-model="post.message"></textarea>
               <button @click="updatePost(idx)">Save</button>
             </div>
-            // Likes and Shares
+            <!--Likes and Shares-->>
             <p class="postStats"><i class="bi bi-heart" @click="likePost(idx)"></i
               >{{ post.likes }}
               <i class="bi bi-share" @click="sharePost(idx)"></i>
               {{ post.shares }}
             </p>
-            // Buttons
+            <!--Buttons--> 
             <button class="btn btn-danger" @click="deletePost(idx)">
               Delete
             </button>
